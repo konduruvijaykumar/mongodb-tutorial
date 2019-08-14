@@ -49,9 +49,11 @@ deleteOne(<filter>, <options>)
 deletemany(<filter>, <options>)
 ```
 
-##### show all db's
+##### show all db's, collections
 ```
 show dbs
+use testdb
+show collections
 ```
 
 ##### Creates DB automatically, when a collection is created with data.
