@@ -94,3 +94,13 @@ db.employee.deleteMany({age: {$gt: 20}})
 db.employee.insertOne({empId: 588, name: "Eshjay", age: 27, active: false, company: "ABC Tech", rating: 4.00})
 db.employee.insertMany([{"empId": 546, "name": "Vjay", "age": 30, "active": true, "company": "ABC Tech", "rating": 4.35}, {empId: 689, "name": "Pjay", "age": 24, "active": false, company: "ABC Tech", rating: 4.99}])
 ```
+
+##### Update one or many documents/records in a collection
+```
+db.employee.updateOne({name: "Eshjay"}, {$set: {active: true}})
+db.employee.updateMany({age: {$gt: 25}}, {$set: {active: true}})
+db.employee.updateMany({age: {$gt: 20}}, {$set: {active: true}})
+db.employee.updateMany({}, {$set: {active: true}})
+db.employee.updateMany({age: {$gt: 25}}, {$set: {designation: "professional 2"}}) // adds new attribute, if not existing or else update
+db.employee.updateMany({}, {$set: {designation: "developer"}}) // adds new attribute, if not existing or else update
+```
