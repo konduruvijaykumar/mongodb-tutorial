@@ -19,6 +19,8 @@ https://docs.mongodb.com/ecosystem/drivers/node/
 
 https://docs.mongodb.com/ecosystem/drivers/java/
 
+### CRUD Operations
+
 show all db's
 ```
 show dbs
@@ -33,7 +35,7 @@ db.employee.insertOne({"empId": 546, "name": "Vjay", "age": 30, "active": true, 
 show dbs
 ```
 
-Find all documents in a collection
+Find all documents or records in a collection
 ```
 db.employee.find()
 ```
