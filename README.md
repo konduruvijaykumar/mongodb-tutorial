@@ -31,4 +31,6 @@ use testdb
 db.employee.insertOne({"empId": 546, "name": "Vjay", "age": 30, "active": true, "company": "ABC Tech", "rating": 4.35})
 
 show dbs
+
+db.employee.find()
 ```
