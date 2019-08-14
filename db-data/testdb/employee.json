@@ -1,26 +1,26 @@
 [
-{
-        "empId" : 546,
-        "name" : "Vjay",
-        "age" : 30,
-        "active" : true,
-        "company" : "ABC Tech",
-        "rating" : 4.35
-}
-{
-        "empId" : 689,
-        "name" : "Pjay",
-        "age" : 24,
-        "active" : false,
-        "company" : "ABC Tech",
-        "rating" : 4.99
-}
-{
-        "empId" : 588,
-        "name" : "Eshjay",
-        "age" : 27,
-        "active" : false,
-        "company" : "ABC Tech",
-        "rating" : 4
-}
+  {
+    "empId": 546,
+    "name": "Vjay",
+    "age": 30,
+    "active": true,
+    "company": "ABC Tech",
+    "rating": 4.35
+  },
+  {
+    "empId": 689,
+    "name": "Pjay",
+    "age": 24,
+    "active": false,
+    "company": "ABC Tech",
+    "rating": 4.99
+  },
+  {
+    "empId": 588,
+    "name": "Eshjay",
+    "age": 27,
+    "active": false,
+    "company": "ABC Tech",
+    "rating": 4
+  }
 ]
