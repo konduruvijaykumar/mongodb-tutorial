@@ -27,6 +27,8 @@ show dbs
 Creates DB automatically, when a collection is created with data.
 ```
 use testdb
+
 db.employee.insertOne({"empId": 546, "name": "Vjay", "age": 30, "active": true, "company": "ABC Tech", "rating": 4.35})
+
 show dbs
 ```
