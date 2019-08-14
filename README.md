@@ -114,3 +114,13 @@ db.employee.replaceOne({name: "Eshjay"}, { "empId" : 588, "name" : "E-jay", "age
 db.employee.replaceOne({name: "Eshjay"}, { "empId" : 666, "name" : "Eshjay", "age" : 27, "active" : true, "company" : "ABC Tech", "rating" : 4.12, "designation" : "developer" }) // will not replace as name: "Eshjay" was already updated above and no record found for the condition
 db.employee.replaceOne({name: "Eshjay"}, { "empId" : 666, "name" : "Eshjay", "age" : 27, "active" : true, "company" : "ABC Tech", "rating" : 4.12, "designation" : "developer" }, { upsert: true }) // will insert new record when matching record is not found as upsert: true is passed
 ```
+
+
+find() function in mongodb will not return total results, instead it returns a Cursor.
+Which can be used for iterating through result set, by default shell will print first 20 records and then use it command for more results. Let's see this with an example below, creating a collection of passengers json available in db-data folder.
+
+```
+db.passengers.find().pretty() // Gives Cursor and need to run it command for more results
+db.passengers.find().toArray() // Will traverse trough the result set and print all results as array
+db.passengers.find().forEach(passengersData => printjson(passengersData)) // prints all by traversing result set. Lambda funtions written here is javascript, as mongo DB shell runs on javascript
+```
