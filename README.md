@@ -38,4 +38,6 @@ show dbs
 ##### Find all documents or records in a collection
 ```
 db.employee.find()
+
+db.employee.find().pretty()
 ```
