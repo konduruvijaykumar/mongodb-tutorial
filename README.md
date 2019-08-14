@@ -17,3 +17,7 @@ https://docs.mongodb.com/ecosystem/drivers/node/
 
 https://docs.mongodb.com/ecosystem/drivers/java/
 
+show all db's
+```
+show dbs
+```
