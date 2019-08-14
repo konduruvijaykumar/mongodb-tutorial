@@ -73,6 +73,9 @@ Note: shell will take care of double quote not added to key's in document
 db.employee.find()
 db.employee.find({})
 db.employee.find().pretty()
+db.employee.find({age: {$gt: 20}})
+db.employee.findOne() // Shows only first record, if many records found
+db.employee.findOne({age: {$gt: 20}}) // Shows only first record, if many records found
 ```
 
 ##### Delete one or many documents/records in a collection
@@ -84,4 +87,10 @@ db.employee.insertMany([{"empId": 546, "name": "Vjay", "age": 30, "active": true
 db.employee.find({age: {$gt: 20}})
 
 db.employee.deleteMany({age: {$gt: 20}})
+```
+
+##### Insert one or many documents/records in a collection
+```
+db.employee.insertOne({empId: 588, name: "Eshjay", age: 27, active: false, company: "ABC Tech", rating: 4.00})
+db.employee.insertMany([{"empId": 546, "name": "Vjay", "age": 30, "active": true, "company": "ABC Tech", "rating": 4.35}, {empId: 689, "name": "Pjay", "age": 24, "active": false, company: "ABC Tech", rating: 4.99}])
 ```
