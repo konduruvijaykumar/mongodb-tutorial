@@ -105,6 +105,7 @@ db.employee.updateMany({age: {$gt: 25}}, {$set: {designation: "professional 2"}}
 db.employee.updateMany({}, {$set: {designation: "developer"}}) // adds new attribute, if not existing or else update
 ```
 
+
 https://docs.mongodb.com/manual/reference/method/db.collection.replaceOne/#db.collection.replaceOne
 
 ##### Replace one
