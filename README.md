@@ -13,11 +13,20 @@ https://docs.mongodb.com/
 
 https://docs.mongodb.com/manual/tutorial/getting-started/
 
+https://docs.mongodb.com/manual/crud/
+
 https://docs.mongodb.com/ecosystem/drivers/node/
 
 https://docs.mongodb.com/ecosystem/drivers/java/
 
 show all db's
 ```
+show dbs
+```
+
+Creates DB automatically, when a collection is created with data.
+```
+use testdb
+db.employee.insertOne({"empId": 546, "name": "Vjay", "age": 30, "active": true, "company": "ABC Tech", "rating": 4.35})
 show dbs
 ```
