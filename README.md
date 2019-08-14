@@ -104,3 +104,12 @@ db.employee.updateMany({}, {$set: {active: true}})
 db.employee.updateMany({age: {$gt: 25}}, {$set: {designation: "professional 2"}}) // adds new attribute, if not existing or else update
 db.employee.updateMany({}, {$set: {designation: "developer"}}) // adds new attribute, if not existing or else update
 ```
+
+https://docs.mongodb.com/manual/reference/method/db.collection.replaceOne/#db.collection.replaceOne
+
+##### Replace one
+```
+db.employee.replaceOne({name: "Eshjay"}, { "empId" : 588, "name" : "E-jay", "age" : 26, "active" : true, "company" : "ABC Tech Inc", "rating" : 4.1, "designation" : "developer" })
+db.employee.replaceOne({name: "Eshjay"}, { "empId" : 666, "name" : "Eshjay", "age" : 27, "active" : true, "company" : "ABC Tech", "rating" : 4.12, "designation" : "developer" }) // will not replace as name: "Eshjay" was already updated above and no record found for the condition
+db.employee.replaceOne({name: "Eshjay"}, { "empId" : 666, "name" : "Eshjay", "age" : 27, "active" : true, "company" : "ABC Tech", "rating" : 4.12, "designation" : "developer" }, { upsert: true }) // will insert new record when matching record is not found as upsert: true is passed
+```
