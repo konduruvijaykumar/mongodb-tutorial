@@ -19,31 +19,34 @@ https://docs.mongodb.com/ecosystem/drivers/node/
 
 https://docs.mongodb.com/ecosystem/drivers/java/
 
+### Query Options
+https://docs.mongodb.com/manual/reference/operator/query-comparison/
+
 ### CRUD Operations (below commands are run in mongodb shell)
 
 #### Create Commands
 ```
-insertOne(data, options)
-insertMany(data, options)
+insertOne(<data>, <options>)
+insertMany(<data>, <options>)
 ```
 
 #### Read Commands
 ```
-find(filter, options)
-findOne(filter, options)
+find(<filter>, <options>)
+findOne(<filter>, <options>)
 ```
 
 #### Update Commands
 ```
-updateOne(filter, data, options)
-updateMany(filter, data, options)
-replaceOne(filter, data, options)
+updateOne(<filter>, <updateData>, <options>)
+updateMany(<filter>, <updateData>, <options>)
+replaceOne(<filter>, <updateData>, <options>)
 ```
 
 #### Delete Commands
 ```
-deleteOne(filter, options)
-deletemany(filter, options)
+deleteOne(<filter>, <options>)
+deletemany(<filter>, <options>)
 ```
 
 ##### show all db's
@@ -65,8 +68,20 @@ db.employee.insertOne({empId: 588, name: "Eshjay", age: 27, active: false, compa
 ```
 Note: shell will take care of double quote not added to key's in document
 
-##### Find all documents or records in a collection
+##### Find all documents/records in a collection
 ```
 db.employee.find()
+db.employee.find({})
 db.employee.find().pretty()
+```
+
+##### Delete one or many documents/records in a collection
+```
+db.employee.deleteOne({"name": "Pjay"})
+db.employee.deleteMany({})
+
+db.employee.insertMany([{"empId": 546, "name": "Vjay", "age": 30, "active": true, "company": "ABC Tech", "rating": 4.35}, {empId: 689, "name": "Pjay", "age": 24, "active": false, company: "ABC Tech", rating: 4.99}])
+db.employee.find({age: {$gt: 20}})
+
+db.employee.deleteMany({age: {$gt: 20}})
 ```
