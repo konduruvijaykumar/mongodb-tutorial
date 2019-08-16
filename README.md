@@ -159,4 +159,8 @@ SELECT _id, item, status from inventory WHERE status = "A"
 
 db.inventory.find( { status: "A" } , {item: 1, status: 1, _id: 0}) // Suppresses the _id field as it is passed with "0" in options
 SELECT item, status from inventory WHERE status = "A"
+// Note: With the exception of the _id field, you cannot combine inclusion and exclusion statements in projection documents.
+
+db.inventory.find( { status: "A" } , {item: 0, status: 0}) // Return all fields excluding fields mentioned in options as "0"
+db.inventory.find( { status: "A" } , {item: 0, status: 0, _id: 0})
 ```
