@@ -126,3 +126,14 @@ db.passengers.find().pretty() // Gives Cursor and need to run it command for mor
 db.passengers.find().toArray() // Will traverse trough the result set and print all results as array
 db.passengers.find().forEach(passengersData => printjson(passengersData)) // prints all by traversing result set. Lambda funtions written here is javascript, as mongo DB shell runs on javascript
 ```
+
+##### drop db's, collections
+```
+show dbs
+use testdb
+show collections
+
+db.employee.drop()
+db.passengers.drop()
+db.dropDatabase()
+```
