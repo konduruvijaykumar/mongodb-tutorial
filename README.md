@@ -20,7 +20,7 @@ https://docs.mongodb.com/ecosystem/drivers/node/
 https://docs.mongodb.com/ecosystem/drivers/java/
 
 ### Query Options
-https://docs.mongodb.com/manual/reference/operator/query-comparison/
+https://docs.mongodb.com/manual/reference/operator/query/
 
 ### CRUD Operations (below commands are run in mongodb shell)
 
