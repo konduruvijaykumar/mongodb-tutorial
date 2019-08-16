@@ -25,39 +25,39 @@ https://docs.mongodb.com/manual/reference/operator/query-comparison/
 ### CRUD Operations (below commands are run in mongodb shell)
 
 #### Create Commands
-```
+```sql
 insertOne(<data>, <options>)
 insertMany(<data>, <options>)
 ```
 
 #### Read Commands
-```
+```sql
 find(<filter>, <options>)
 findOne(<filter>, <options>)
 ```
 
 #### Update Commands
-```
+```sql
 updateOne(<filter>, <updateData>, <options>)
 updateMany(<filter>, <updateData>, <options>)
 replaceOne(<filter>, <updateData>, <options>)
 ```
 
 #### Delete Commands
-```
+```sql
 deleteOne(<filter>, <options>)
 deletemany(<filter>, <options>)
 ```
 
 ##### show all db's, collections
-```
+```sql
 show dbs
 use testdb
 show collections
 ```
 
 ##### Creates DB automatically, when a collection is created with data.
-```
+```sql
 use testdb
 
 db.employee.insertOne({"empId": 546, "name": "Vjay", "age": 30, "active": true, "company": "ABC Tech", "rating": 4.35})
@@ -71,7 +71,7 @@ db.employee.insertOne({empId: 588, name: "Eshjay", age: 27, active: false, compa
 Note: shell will take care of double quote not added to key's in document
 
 ##### Find all documents/records in a collection
-```
+```sql
 db.employee.find()
 db.employee.find({})
 db.employee.find().pretty()
@@ -81,7 +81,7 @@ db.employee.findOne({age: {$gt: 20}}) // Shows only first record, if many record
 ```
 
 ##### Delete one or many documents/records in a collection
-```
+```sql
 db.employee.deleteOne({"name": "Pjay"})
 db.employee.deleteMany({})
 
@@ -92,13 +92,13 @@ db.employee.deleteMany({age: {$gt: 20}})
 ```
 
 ##### Insert one or many documents/records in a collection
-```
+```sql
 db.employee.insertOne({empId: 588, name: "Eshjay", age: 27, active: false, company: "ABC Tech", rating: 4.00})
 db.employee.insertMany([{"empId": 546, "name": "Vjay", "age": 30, "active": true, "company": "ABC Tech", "rating": 4.35}, {empId: 689, "name": "Pjay", "age": 24, "active": false, company: "ABC Tech", rating: 4.99}])
 ```
 
 ##### Update one or many documents/records in a collection
-```
+```sql
 db.employee.updateOne({name: "Eshjay"}, {$set: {active: true}})
 db.employee.updateMany({age: {$gt: 25}}, {$set: {active: true}})
 db.employee.updateMany({age: {$gt: 20}}, {$set: {active: true}})
@@ -111,7 +111,7 @@ db.employee.updateMany({}, {$set: {designation: "developer"}}) // adds new attri
 https://docs.mongodb.com/manual/reference/method/db.collection.replaceOne/#db.collection.replaceOne
 
 ##### Replace one
-```
+```sql
 db.employee.replaceOne({name: "Eshjay"}, { "empId" : 588, "name" : "E-jay", "age" : 26, "active" : true, "company" : "ABC Tech Inc", "rating" : 4.1, "designation" : "developer" })
 db.employee.replaceOne({name: "Eshjay"}, { "empId" : 666, "name" : "Eshjay", "age" : 27, "active" : true, "company" : "ABC Tech", "rating" : 4.12, "designation" : "developer" }) // will not replace as name: "Eshjay" was already updated above and no record found for the condition
 db.employee.replaceOne({name: "Eshjay"}, { "empId" : 666, "name" : "Eshjay", "age" : 27, "active" : true, "company" : "ABC Tech", "rating" : 4.12, "designation" : "developer" }, { upsert: true }) // will insert new record when matching record is not found as upsert: true is passed
@@ -121,14 +121,14 @@ db.employee.replaceOne({name: "Eshjay"}, { "empId" : 666, "name" : "Eshjay", "ag
 find() function in mongodb will not return total results, instead it returns a Cursor.
 Which can be used for iterating through result set, by default shell will print first 20 records and then use it command for more results. Let's see this with an example below, creating a collection of passengers json available in db-data folder.
 
-```
+```sql
 db.passengers.find().pretty() // Gives Cursor and need to run it command for more results
 db.passengers.find().toArray() // Will traverse trough the result set and print all results as array
 db.passengers.find().forEach(passengersData => printjson(passengersData)) // prints all by traversing result set. Lambda funtions written here is javascript, as mongo DB shell runs on javascript
 ```
 
 ##### drop db's, collections
-```
+```sql
 show dbs
 use testdb
 show collections
