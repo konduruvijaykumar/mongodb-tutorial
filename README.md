@@ -137,3 +137,20 @@ db.employee.drop()
 db.passengers.drop()
 db.dropDatabase()
 ```
+
+### Projection
+https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/
+
+
+We will take inventory collection from mongodb tutorial, inventory.json added in db-data. We will also add corresponding SQL statement for better understanding
+##### projection examples
+```sql
+show dbs
+use testdb
+show collections
+
+db.inventory.insertMany(<use inventory.json data>)
+
+db.inventory.find( { status: "A" } )
+SELECT * from inventory WHERE status = "A"
+```
