@@ -154,6 +154,9 @@ db.inventory.insertMany(<use inventory.json data>)
 db.inventory.find( { status: "A" } )
 SELECT * from inventory WHERE status = "A"
 
-db.inventory.find({ status: "A" } , {item: 1, status: 1}) // Return the specified fields as 1 and the _id field Only
+db.inventory.find({ status: "A" } , {item: 1, status: 1}) // Return the specified fields as "1" in options and the _id field Only
 SELECT _id, item, status from inventory WHERE status = "A"
+
+db.inventory.find( { status: "A" } , {item: 1, status: 1, _id: 0}) // Suppresses the _id field as it is passed with "0" in options
+SELECT item, status from inventory WHERE status = "A"
 ```
