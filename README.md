@@ -167,9 +167,11 @@ db.inventory.find({ status: "A" } , {item: 1, status: 1, "size.uom": 1}) // retu
 db.inventory.find({ status: "A" } , {"size.uom": 0}) // suppress specific fields in an embedded document
 db.inventory.find({ status: "A" } , {item: 1, status: 1, "instock": 1})
 db.inventory.find({ status: "A" } , {item: 1, status: 1, "instock.qty": 1}) // project specific fields inside documents embedded in an array
+```
 
 https://docs.mongodb.com/manual/reference/operator/projection/slice/#proj._S_slice
 
+```sql
 db.inventory.find({ status: "A" } , {item: 1, status: 1, instock: {$slice: -1}})
 db.inventory.find({ status: "A" } , {item: 1, status: 1, instock: {$slice: -2}})
 db.inventory.find({ status: "A" } , {item: 1, status: 1, instock: {$slice: -3}})
